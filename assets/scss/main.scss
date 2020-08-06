@@ -612,7 +612,7 @@ figcaption {
   background:	$white;
   margin: 1.5em auto;
   padding: 1em;
-  max-width: 55em;
+  max-width: 60em;
   > header {
     border-bottom: $primary-border;
     margin: -1em -1em 0 -1em;
@@ -641,8 +641,8 @@ figcaption {
     @include display-flex;
     flex-direction: column;
     .button {
-      margin: 1em auto;
-      width: 100%;
+      margin: 1em auto 1em 0;
+      // width: 100%;
     }
   }
 }
