@@ -7,13 +7,13 @@
 <header id="site-header">
   <nav id="site-nav">
     <h1 class="nav-title">
-      <a href="{{ "/" | relLangURL }}" class="nav">
+      <!-- <a href="{{ "/" | relLangURL }}" class="nav"> -->
         {{ if or .IsHome (not .Site.Params.header.dynamicTitles) }}
           {{ .Site.Params.header.navbarTitle  | safeHTML }}
         {{ else }}
           {{ i18n .Section | default .Title }}
         {{ end }}
-      </a>
+      <!-- </a> -->
     </h1>
     <menu id="site-nav-menu" class="flyout-menu menu">
       {{ range .Site.Menus.main }}
