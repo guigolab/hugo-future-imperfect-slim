@@ -647,6 +647,90 @@ figcaption {
   }
 }
 
+.publication {
+  background:	$white;
+  margin: 1.5em auto;
+  padding: 1.5em;
+  max-width: 60em;
+  > header {
+    border-bottom: $primary-border;
+    margin: -1em -1em 0 -1em;
+    text-align: center;
+    @include prefix(word-break, break-word, ms);
+    @include for-laptop-up {
+      @include display-flex;
+      justify-content: space-between;
+      text-align: left;
+    }
+    div {
+      padding-bottom: 1em;
+      @include for-laptop-up {
+        padding: 1.5em;
+      }
+    }
+    h3 {
+      font-size: 0.9em;
+    }
+    p {
+      margin: -1em 0 0 0;
+      font-family: "Raleway", Helvetica, sans-serif;
+      font-size: 0.7em;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      line-height: 2.5;
+      text-transform: uppercase;
+    }
+  }
+  > div > p,
+  > p {
+    text-align: justify;
+  }
+  header {
+    .title {
+      h3 {
+        margin-top: 0;
+      }
+      p {
+        font-size: 0.6em;
+      }
+    }
+    .meta {
+      font-size: 0.9em;
+      time {
+        font-size: 1.1em;
+      }
+      a {
+        font-size: 1.2em;
+        font-weight: 200;
+        margin: .5rem 0;
+        border-bottom: none;
+      }
+      p {
+        margin: .3rem 0;
+        font-size: 0.8em;
+      }
+    }
+  }
+  footer {
+    display: none;
+    @include for-laptop-up {
+      @include display-flex;
+    }
+    flex-direction: column;
+    .stats {
+      flex-direction: column;
+      ul {
+        // width: 100%;
+        justify-content: flex-start;
+        &::before {
+          flex: inherit;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
 .image {
   border: 0;
   display: grid;
