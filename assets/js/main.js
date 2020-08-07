@@ -11,11 +11,18 @@ $.each(toggles, function(toggle, menu) {
     if ($(menu).hasClass("active")) {
       $(".menu").removeClass("active");
       $("#wrapper").removeClass("overlay");
+      if (menu == "#search-input") {
+        $("#search").toggleClass("hidden");
+        $("#search-results").toggleClass("active");
+      }
     } else {
       $("#wrapper").addClass("overlay");
       $(".menu").not($(menu + ".menu")).removeClass("active");
       $(menu).addClass("active");
-      if (menu == "#search-input") {$("#search-results").toggleClass("active");}
+      if (menu == "#search-input") {
+        $("#search").toggleClass("hidden");
+        $("#search-results").toggleClass("active");
+      }
     }
   });
 });
@@ -24,6 +31,7 @@ $.each(toggles, function(toggle, menu) {
 $(document).on("click", function(e) {
   if ($(e.target).is(".lang-toggle, .lang-toggle span, #lang-menu, .share-toggle, .share-toggle i, #share-menu, .search-toggle, .search-toggle i, #search-input, #search-results .mini-post, .nav-toggle, .nav-toggle i, #site-nav") === false) {
     $(".menu").removeClass("active");
+    $("#search").addClass("hidden");
     $("#wrapper").removeClass('overlay');
   }
 });
