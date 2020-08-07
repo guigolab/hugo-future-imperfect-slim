@@ -1349,6 +1349,8 @@ figcaption {
   section {
     h1 {
       font-size: 1em;
+      @include display-flex;
+      justify-content: space-between;
     }
     @include for-desktop-up {
       h1 {
