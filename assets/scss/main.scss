@@ -1386,9 +1386,15 @@ figcaption {
   #publications {
     .mini-post {
       header {
-        > h3 {
+        > h2 {
           font-size: 0.7em;
         }
+        @include for-tablet-up {
+          > h2 {
+            font-size: 0.6em;
+          }
+        }
+      }
       }
     }
   }
