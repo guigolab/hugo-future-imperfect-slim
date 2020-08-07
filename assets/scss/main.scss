@@ -1263,77 +1263,41 @@ figcaption {
 }
 
 #main {
-  @include display-flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: stretch;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows:auto auto auto;
+  grid-template-areas:
+    "about"
+    "publications"
+    "twitter";
   @include for-tablet-up {
-    flex-direction: row;
-    padding: 0 0.25em;
-    margin: 0 1.5em;
+    grid-template-columns: 60% 40%;
+    grid-template-rows:auto auto;
+    grid-template-areas:
+    "about twitter"
+    "publications publications";
   }
   @include for-desktop-up {
-    padding: 0;
-  }
-  .column {
-    max-width: 100%;
-    @include for-tablet-up {
-      max-width: 25%;
-    }
-    @media (aspect-ratio: 16/9)  {
-      min-width: 20%;
-    }
+    grid-template-columns: 50% 25% 25%;
+    grid-template-rows:auto;
+    grid-template-areas:
+    "about publications twitter";
   }
   .about {
-    min-width: 40%;
-    max-width: 100%;
-    @include for-tablet-up {
-      max-width: 65%;
-    }
-    @include for-desktop-up {
-      max-width: 49%;
-    }
-    @media (aspect-ratio: 16/9)  {
-      min-width: 60%;
-      }
-    }
+    grid-area: about;
+  }
   #publications {
+    grid-area: publications;
     @include display-flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: baseline;
-    @include for-tablet-up {
-      order: 5;
-      min-width: 100%;
-    }
-    @include for-desktop-up {
-      order: 0;
-      min-width: 25%;
-    }
     header {
-      -webkit-box-flex: 1;
-      @include prefix(flex, 1 1 100%, (ms, webkit));
-
-    }
-    .mini-post {
-      width: 100%;
-      @include for-tablet-up {
-        max-width: 49%;
-      }
-      @include for-desktop-up {
-        max-width: 100%;
-      }
+      flex-basis: 100%;
     }
   }
-
   #twitter {
-    @include for-tablet-up {
-      min-width: 35%;
-    }
-    @include for-desktop-up {
-      min-width: 25%;
-    }
+    grid-area: twitter;
   }
 }
 
@@ -1400,9 +1364,9 @@ figcaption {
           }
         }
       }
-      }
     }
   }
+}
 
 iframe[id^='twitter-widget-0'] {
   width:100vw !important;
