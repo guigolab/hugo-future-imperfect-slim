@@ -1354,6 +1354,11 @@ figcaption {
     }
     @include for-desktop-up {
       h1 {
+        font-size: 0.8em;
+      }
+    }
+    @include for-big-desktop-up {
+      h1 {
         font-size: 0.9em;
       }
     }
