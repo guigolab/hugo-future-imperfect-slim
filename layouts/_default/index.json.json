@@ -7,4 +7,15 @@
     "body": {{ .Content | plainify | jsonify }},
     "ref": "{{ .RelPermalink | plainify }}"
   }
+{{- end -}}
+{{- range $index, $p := $.Site.Data.publications.data -}}
+,
+{
+  "title": "{{ .TI | plainify }}",
+  "date": "{{ .PY }}",
+  "description": "{{ .Params.description | plainify }}",
+  "authors": "{{ .AU | plainify }}",
+  "journal": "{{ .JO | plainify }}",
+  "ref": "https://doi.org/{{ .IB }}"
+}
 {{- end -}}]
