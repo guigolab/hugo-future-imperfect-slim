@@ -1347,8 +1347,14 @@ figcaption {
       padding: 1em;
       letter-spacing: 0.1em;
       border: 1px solid rgba(161,161,161,0.3);
+      font-size: .9em;
+      line-height: 1.5em;
       > p {
         margin: 0;
+      }
+      @include for-bigger-desktop-up {
+        font-size: 1em;
+        line-height: 1.75em;
       }
     }
   }
