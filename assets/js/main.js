@@ -135,7 +135,11 @@ function renderSearchResults(results) {
   if (results.length > 0) {
     results.forEach(function(result) {
       // Create result item
-      container.innerHTML += '<article class="mini-post"><a href="' + result.ref + '"><header><h2>' + resultDetails[result.ref].title + '</h2><time class="published" datetime="">' + resultDetails[result.ref].date + '</time></header><main><p>' + resultDetails[result.ref].description + '</p></main></a></article>';
+      if (result.ref.startsWith("http")) {
+        container.innerHTML += '<article class="mini-post"><a href="' + result.ref + '"  target="_blank"><header><h2>' + resultDetails[result.ref].title + '</h2><time class="published" datetime="">' + resultDetails[result.ref].date + '</time></header><main><p>' + resultDetails[result.ref].description + '</p></main></a></article>';
+      } else {
+        container.innerHTML += '<article class="mini-post"><a href="' + result.ref + '"><header><h2>' + resultDetails[result.ref].title + '</h2><time class="published" datetime="">' + resultDetails[result.ref].date + '</time></header><main><p>' + resultDetails[result.ref].description + '</p></main></a></article>';
+      }
     });
 
     // Remove any existing content so results aren't continually added as the user types
