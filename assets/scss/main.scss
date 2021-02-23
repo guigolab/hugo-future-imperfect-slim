@@ -51,6 +51,7 @@
    /* Other */
 
    $avatar-size: 3.75em;
+   $main-header-size: .8em;
    $hover: 0.2s ease-in-out;
    $hover-slow: 0.35s ease-in-out;
    $shadow-1: 0 3px 6px hsla(0, 0%, 0%, 0.16), 0 3px 6px hsla(0, 0% , 0%, 0.23);
@@ -659,15 +660,66 @@ textarea {
     }
   }
 
+  .fa-file-alt {
+    color: rgba(1, 133, 198, 1);
+  }
+
+  .about {
+    @include post(none);
+    margin-top: -1em;
+    padding-bottom: 0;
+    background-color: inherit;
+    > header {
+      padding-left: 1.5em;
+      h1 {
+        font-size: 1.1em;
+        text-align: left;
+      }
+    }
+    p {
+        margin-top: -1em;
+    }
+    #content {
+      border-radius: 5px;
+      background-color: white;
+      padding: 1.5em 1em;
+      font-size: .85em;
+      line-height: 1.5em;
+      color: #444;
+      font-family: $header-font;
+    }
+    @include for-laptop-up {
+      margin-top: .5em;
+      padding: 1em .5em 1em 0;
+      > header {
+        h1 {
+          font-size: $main-header-size;
+        }
+      }
+      #content {
+        line-height: inherit;
+      }
+    }
+  }
+
   .publication {
     @include post(none);
     > header {
+      @include for-laptop-up {
+        padding-left: .5em;
+      }
       .title {
         padding: .5em;
+        a {
+          padding-left: .5em;
+          font-size: .8em;
+        }
         h3 {
           font-size: 0.8em;
+          display: inline;
         }
         p {
+          margin-top: .5em;
           font-family: $header-font;
           letter-spacing: 0.25em;
           text-transform: uppercase;
@@ -685,6 +737,7 @@ textarea {
           border-bottom: none;
         }
         @include for-laptop-up {
+          justify-content: start;
           padding: 1em;
           > p {
             line-height: 2em;
@@ -694,14 +747,22 @@ textarea {
     }
   }
 
+  .member-list {
+    > h3 {
+      padding-left: .5em;
+      margin-bottom: -1em;
+    }
+  }
+
   .people {
     @include post(none);
     > header {
       .title {
         @include for-laptop-up {
           width: 90%;
+          padding-left: 1em;
         }
-        padding: 1em 0 0 1em;
+        padding: 1em 0 0 0;
         h3 {
           font-size: .9em;
         }
@@ -713,17 +774,25 @@ textarea {
         }
         ul {
           margin: 0 -0.5em;
+          li {
+            font-size: .9em;
+            margin: 0 .25em;
+            @include for-laptop-up {
+              margin: 0 0 0 .5em;
+            }
+          }
           @include for-laptop-up {
             justify-content: start;
           }
         }
       } 
-      .pic {
-        margin: 1em auto -1em;
-        border-radius: 50%;
+      .pic-container {
         width: 100px;
         height: 100px;
-        background-image: url('/imgs/group-new.jpg');
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 1em auto -1em;
+        padding: 0;
         flex: 0 0 auto;
         @include for-laptop-up {
           margin: 1.5em 0 0 1em;
@@ -740,13 +809,13 @@ textarea {
             width: 75%;
           }
           h3 {
-            font-size: 1.2em;
+            font-size: 1.1em;
           }
           P {
-            font-size: 0.8em;
+            font-size: 0.75em;
           }
         }
-        .pic {
+        .pic-container {
           width: 200px;
           height: 200px;
           @include for-laptop-up {
@@ -1055,6 +1124,7 @@ textarea {
         width: 1px;
       }
       a {
+        font-size: 0.45em;
         min-width: 12.5em;
         img {
           margin-top: -0.2em;
@@ -1228,7 +1298,7 @@ textarea {
    #site-header {
     background-color: $white;
     border-bottom: $primary-border;
-    box-shadow: $shadow-2;
+    box-shadow: none;
     height: 3.5em;
     line-height: 3.5em;
     position: fixed;
@@ -1505,6 +1575,40 @@ textarea {
     }
     &.overlay {
       opacity: 0.25;
+    }
+  }
+
+  #main {
+    @include for-laptop-up {
+      @include display-flex;
+      padding: .5em;
+    }
+  }
+
+  #twitter {
+    @include post(none);
+    background-color: inherit;
+    > header {
+      padding-left: 1.5em;
+      h1 {
+        text-align: left;
+        i {
+          padding-right: .5em;
+        }
+        letter-spacing: .2em;
+        font-size: 1em;
+      }
+    }
+    @include for-laptop-up {
+      padding: 0;
+      margin: 1.5em 0 0 0;
+      flex: 0 0 auto;
+      width: 25%;
+      > header {
+        h1 {
+          font-size: $main-header-size;
+        }
+      }
     }
   }
 
