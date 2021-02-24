@@ -801,7 +801,8 @@ textarea {
       .pic {
         width: 100%;
         height: 100%;
-        background-image: url('../imgs/group-low-res.jpg');
+        border-radius: 50%;
+        background-image: url('../imgs/group.jpg');
       }
       &.leader {
         .title {
