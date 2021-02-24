@@ -748,9 +748,13 @@ textarea {
   }
 
   .member-list {
-    > h3 {
-      padding-left: .5em;
+    > h4 {
+      text-align: center;
       margin-bottom: -1em;
+      @include for-laptop-up {
+        text-align: left;
+        padding-left: .5em;
+      } 
     }
   }
 
