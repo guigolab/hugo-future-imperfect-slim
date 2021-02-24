@@ -703,11 +703,18 @@ textarea {
   }
 
   .publication {
+    .anchor {
+      display: block;
+      position: relative;
+      top: -5em;
+      visibility: hidden;
+    }
     @include post(none);
     > header {
       @include for-laptop-up {
         padding-left: .5em;
       }
+
       .title {
         padding: .5em;
         a {
