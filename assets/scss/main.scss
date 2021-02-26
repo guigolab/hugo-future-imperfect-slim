@@ -814,26 +814,20 @@ textarea {
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background-image: url('../imgs/group.jpg');
+        background-size: cover;
       }
       &.leader {
         .title {
-          @include for-laptop-up {
-            width: 75%;
-          }
           h3 {
-            font-size: 1.1em;
+            font-size: .95em;
           }
           P {
-            font-size: 0.75em;
+            font-size: 0.7em;
           }
         }
         .pic-container {
-          width: 200px;
-          height: 200px;
-          @include for-laptop-up {
-            margin: 1em 0 0 1em;
-          }
+          width: 120px;
+          height: 120px;
         }
       }
     }
