@@ -34,7 +34,9 @@
           {{- $rtl := resources.Get "css/rtl.css" | minify -}}
           <link rel="stylesheet" href="{{ $rtl.RelPermalink }}">
         {{- end -}}
+        {{ if (fileExists "static/css/add-on.css") -}}
         <link rel="stylesheet" href="{{ "css/add-on.css" | relURL }}">
+        {{- end -}}
       {{- else }}
         <link rel="stylesheet" href="{{ . | relURL }}">
       {{- end -}}
