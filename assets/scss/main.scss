@@ -54,6 +54,7 @@
    $main-header-size: .8em;
    $hover: 0.2s ease-in-out;
    $hover-slow: 0.35s ease-in-out;
+   $shadow-0: 0 1px 2px hsla(0, 0%, 0%, 0.16), 0 1px 2px hsla(0, 0% , 0%, 0.23);
    $shadow-1: 0 3px 6px hsla(0, 0%, 0%, 0.16), 0 3px 6px hsla(0, 0% , 0%, 0.23);
    $shadow-2: 0 10px 20px hsla(0, 0%, 0%, 0.19), 0 6px 6px hsla(0, 0%, 0%, 0.23);
    $shadow-3: 0 14px 28px hsla(0, 0%, 0%, 0.25), 0 10px 10px hsla(0, 0%, 0%, 0.22);
@@ -465,6 +466,11 @@ textarea {
       width: 90%;
     }
     > thead {
+      > tr {
+        > th:empty {
+          display: none;
+        }
+      }
       display: none;
       @include for-laptop-up {
         background-color: $headerbg-color;
@@ -657,6 +663,24 @@ textarea {
           }
         }
       }
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding-top: 3em; 
+      margin-top: -3em;
+    }
+    figure {
+      text-align: center;
+      box-shadow: none;
+      padding: .5em;
+    }
+
+    table {
+      box-shadow: $shadow-0;
     }
   }
 
